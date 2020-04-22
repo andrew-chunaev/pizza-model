@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jpa:entity-mappings ptype="MONOLITH" ppkg="net.sweam.pizza" epkg="model" v="5.3" rws="_15875260124102" Pws="_15875260124102" cws="_15875260124102" persistenceUnitName="DEFAULT_PU" sm="false" xs="false" id="_15875260124091" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_1.xsd" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:jpa="http://java.sun.com/xml/ns/persistence/orm" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <jpa:entity compositePrimaryKeyClass="PizzaPK" abs="false" class="Pizza" v="true" jbn="false" xre="false" m="false" rootElement="_15875260124091" id="_15875260399053">
+        <jpa:ath>andrew</jpa:ath>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="name" id="_158752682984110">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="int" v="true" xvt="" name="price" id="_158752688001311">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="int" v="true" xvt="" name="weight" id="_158752784498321">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="int" v="true" xvt="" name="diameter" id="_158752789053822">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:one-to-many orp="false" own="true" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_15875264534196" v="true" xvt="" name="ingredients" id="_158752707165315">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:cascade>
+                    <jpa:cascade-all/>
+                </jpa:cascade>
+            </jpa:one-to-many>
+            <jpa:one-to-many orp="false" own="true" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_158752745784816" v="true" xvt="" name="pictures" id="_158752761461920">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:one-to-many>
+            <jpa:id attribute-type="Long" v="true" xvt="" name="id" id="_15875260399304">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:generated-value strategy="DEFAULT"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Pizza.findAll">
+            <jpa:query>Select e from Pizza e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Pizza.findByName">
+            <jpa:query>Select p from Pizza p where p.name=:name</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Pizza.findByPrice">
+            <jpa:query>Select p from Pizza p where p.price=:price</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Pizza.findByPrice">
+            <jpa:query>Select p from Pizza p where p.price=:price</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Pizza.findByAttribute2">
+            <jpa:query>Select p from Pizza p where p.attribute2=:attribute2</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Pizza.findByWeight">
+            <jpa:query>Select p from Pizza p where p.weight=:weight</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Pizza.findByDiameter">
+            <jpa:query>Select p from Pizza p where p.diameter=:diameter</jpa:query>
+        </jpa:nq>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="IngredientPK" abs="false" class="Ingredient" v="true" jbn="false" xre="false" m="false" rootElement="_15875260124091" id="_15875264534196">
+        <jpa:ath>andrew</jpa:ath>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="name" id="_15875267916589">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:id attribute-type="char" v="true" xvt="" name="id" id="_15875264534207">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:generated-value strategy="DEFAULT"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Ingredient.findAll">
+            <jpa:query>Select e from Ingredient e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Ingredient.findByName">
+            <jpa:query>Select i from Ingredient i where i.name=:name</jpa:query>
+        </jpa:nq>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="PicturePK" abs="false" class="Picture" v="true" jbn="false" xre="false" m="false" rootElement="_15875260124091" id="_158752745784816">
+        <jpa:ath>andrew</jpa:ath>
+        <jpa:attributes>
+            <jpa:id attribute-type="Long" v="true" xvt="" name="id" id="_158752745784817">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:generated-value strategy="DEFAULT"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Picture.findAll">
+            <jpa:query>Select e from Picture e</jpa:query>
+        </jpa:nq>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="PizzaOrderPK" abs="false" class="PizzaOrder" v="true" jbn="false" xre="false" m="false" rootElement="_15875260124091" id="_158752827814423">
+        <jpa:ath>andrew</jpa:ath>
+        <jpa:attributes>
+            <jpa:basic attribute-type="java.time.LocalDate" v="true" xvt="" name="date" id="_158752874038029">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:one-to-many orp="false" own="true" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_15875260399053" fetch="LAZY" v="true" xvt="" name="pizzas" id="_158752897635434">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:cascade>
+                    <jpa:cascade-all/>
+                </jpa:cascade>
+            </jpa:one-to-many>
+            <jpa:many-to-many own="true" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_158752848251626" connected-attribute-id="_158752938382439" fetch="LAZY" v="true" xvt="" name="customers" id="_158752938382138">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:cascade>
+                    <jpa:cascade-all/>
+                </jpa:cascade>
+            </jpa:many-to-many>
+            <jpa:id attribute-type="Long" v="true" xvt="" name="id" id="_158752827814424">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:generated-value strategy="DEFAULT"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="PizzaOrder.findAll">
+            <jpa:query>Select e from PizzaOrder e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="PizzaOrder.findByDate">
+            <jpa:query>Select p from PizzaOrder p where p.date=:date</jpa:query>
+        </jpa:nq>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="CustomerPK" abs="false" class="Customer" v="true" jbn="false" xre="false" m="false" rootElement="_15875260124091" id="_158752848251626">
+        <jpa:ath>andrew</jpa:ath>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="address" id="_158752884540030">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="phone" id="_158752886182031">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="name" id="_158752889070432">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:many-to-many collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_158752827814423" connected-attribute-id="_158752938382138" fetch="LAZY" v="true" xvt="" name="pizzaOrders" id="_158752938382439">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:cascade>
+                    <jpa:cascade-all/>
+                </jpa:cascade>
+            </jpa:many-to-many>
+            <jpa:id attribute-type="java.util.UUID" v="true" xvt="" name="id" id="_158752848251627">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:generated-value strategy="DEFAULT"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Customer.findAll">
+            <jpa:query>Select e from Customer e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Customer.findByAddress">
+            <jpa:query>Select c from Customer c where c.address=:address</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Customer.findByPhone">
+            <jpa:query>Select c from Customer c where c.phone=:phone</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Customer.findByName">
+            <jpa:query>Select c from Customer c where c.name=:name</jpa:query>
+        </jpa:nq>
+    </jpa:entity>
+    <jpa:c>
+        <ct>java.util.List</ct>
+        <ct>java.util.Set</ct>
+        <ct>java.util.Map</ct>
+        <ct>java.util.Collection</ct>
+        <cit>java.util.ArrayList</cit>
+        <cit>java.util.LinkedList</cit>
+        <cit>java.util.HashSet</cit>
+        <cit>java.util.TreeSet</cit>
+        <cit>java.util.HashMap</cit>
+    </jpa:c>
+    <jpa:wsl>
+        <jpa:ws n="Main" id="_15875260124102">
+            <i ref="_15875264534196" x="524" y="113"/>
+            <i ref="_158752745784816" x="536" y="383"/>
+            <i ref="_15875260399053" x="281" y="113"/>
+            <i ref="_158752848251626" x="267" y="580"/>
+            <i ref="_158752827814423" x="62" y="351"/>
+        </jpa:ws>
+    </jpa:wsl>
+</jpa:entity-mappings>
